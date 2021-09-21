@@ -2,23 +2,18 @@ import React from 'react';
 import './App.css';
 
 const App = () => {
+  const nameList = ['Andrew', 'Alex', 'Team'];
   return (
     <HeaderNFooter>
-      <SayHello name="Andrew" />
-      <SayHello name="Team" />
+      {nameList.map((name) => (
+        <SayHello name={name} />
+      ))}
     </HeaderNFooter>
   );
 };
 
 const SayHello = (props) => {
   const hour = new Date().getHours();
-  /**
-  if (hour < 12) {
-    return <p>Good morning {props.name}</p>;
-  } else {
-    return <p>Good afternoon {props.name}</p>;
-  } 
-  **/
   return (
     <p>
       Good {hour < 12 ? 'morning' : 'afternoon'} {props.name}
