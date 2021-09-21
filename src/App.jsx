@@ -11,7 +11,19 @@ const App = () => {
 };
 
 const SayHello = (props) => {
-  return <p>Hello {props.name}</p>;
+  const hour = new Date().getHours();
+  /**
+  if (hour < 12) {
+    return <p>Good morning {props.name}</p>;
+  } else {
+    return <p>Good afternoon {props.name}</p>;
+  } 
+  **/
+  return (
+    <p>
+      Good {hour < 12 ? 'morning' : 'afternoon'} {props.name}
+    </p>
+  );
 };
 
 const HeaderNFooter = (props) => {
