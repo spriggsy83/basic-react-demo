@@ -7,11 +7,16 @@ const App = () => {
       <b>React demo</b>
       <hr />
       <hr />
-      <p>Hello there</p>
+      <SayHello name="Andrew" />
+      <SayHello name="Team" />
       <hr />
       <hr />
     </div>
   );
+};
+
+const SayHello = (props) => {
+  return <p>Hello {props.name}</p>;
 };
 
 export default App;
