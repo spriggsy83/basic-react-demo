@@ -12,10 +12,10 @@ const App = () => {
 };
 
 const SayHello = (props) => {
-  const hour = new Date().getHours();
+  let [counter, updateCounter] = React.useState(0);
   return (
-    <p style={{ fontSize: 'x-large' }}>
-      Good {hour < 12 ? 'morning' : 'afternoon'} {props.name}
+    <p onClick={() => updateCounter(counter + 1)}>
+      Good morning {props.name} (clicked {counter} times)
     </p>
   );
 };
